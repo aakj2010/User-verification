@@ -54,7 +54,7 @@ async function AuthorizeUser(token) {
         if (decodedToken) {
             const email = decodedToken.email;
             const data = await User.findOne({ email: email });
-            return data ? data : false;
+            return data;
         }
         return false;
     } catch (error) {
