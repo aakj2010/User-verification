@@ -19,8 +19,8 @@ const userSchema = new mongoose.Schema(
             default: Date.now()
         },
         forgetPassword: {
-            time: Date,
-            otp: String,
+            token: String,
+            expiration: Date,
         },
         token: {
             type: String,
@@ -30,5 +30,4 @@ const userSchema = new mongoose.Schema(
         collection: "User",
     }
 );
-module.exports = mongoose.model("User", userSchema)
-
+module.exports = mongoose.model("User", userSchema);

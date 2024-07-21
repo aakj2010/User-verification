@@ -7,6 +7,7 @@ const signupRouter = require('./routes/signUp');
 const loginRouter = require('./routes/login');
 const homeRouter = require('./routes/home');
 const notesRouter = require('./routes/notes');
+const resetPasswordRouter = require('./routes/resetPassword');
 dotenv.config();
 
 const port = 4000;
@@ -29,6 +30,7 @@ app.get("/", (req, res) => {
 app.use('/signup', signupRouter);
 app.use('/login', loginRouter);
 app.use('/home', homeRouter);
+app.use('/api', resetPasswordRouter);
 app.use('/notes', notesRouter);
 
 app.listen(port, () => {
