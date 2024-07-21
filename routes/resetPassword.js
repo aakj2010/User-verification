@@ -3,7 +3,7 @@ const { sendPasswordResetEmail, resetPassword } = require('../controllers/resetP
 const router = express.Router();
 const { forgotPasswordLimiter } = require('../utils/rateLimiter'); // Import rate limiter
 
-router.post('/', forgotPasswordLimiter, async (req, res) => { // Apply rate limiter
+router.post('/forgot-password', forgotPasswordLimiter, async (req, res) => { // Apply rate limiter
     try {
         const { email } = req.body;
         const response = await sendPasswordResetEmail(email);
